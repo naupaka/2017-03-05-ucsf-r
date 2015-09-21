@@ -1,0 +1,28 @@
+---
+title: "Gapminder report"
+author: "Naupaka Zimmerman"
+date: "January 10, 2015"
+output: word_document
+---
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+```{r, echo=FALSE}
+library("ggplot2")
+gap.in <- read.delim("../data/gapminderDataFiveYear.txt", header = TRUE)
+```
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+summary(gap.in)
+```
+
+You can also do dynamic caluclations within prose text.  For example, we can calculate the maximum life expectancy of the United States (form this data set). It is `r max(gap.in$lifeExp[gap.in$country=="United States"])`. This can be useful so that you don't have to recalculate all your number if you update your data or change things after you have written the first draft.
+
+You can also embed plots, for example:
+
+```{r, echo=FALSE, message=FALSE}
+ggplot(data = gap.in, aes(year, lifeExp)) + geom_point() + geom_smooth() + facet_grid(. ~ continent) + theme(axis.text.x = element_text(angle = 90, hjust = 1))
+```
+
