@@ -12,7 +12,7 @@ bash cleanData.sh
 bash combine.sh
 
 # Install the Rmarkdown library to render the Rmd
-R -e "install.packages('rmarkdown', repos='http://cran.us.r-project.org')"
+R -e "if(!require(rmarkdown)) install.packages('rmarkdown', repos='http://cran.us.r-project.org')"
 
 # Render the Rmd
 R -e "rmarkdown::render('capstone_analysis.Rmd')"
