@@ -1,6 +1,6 @@
 ---
 title: "iPlant Software Carpentry Capstone Exercise"
-author: "Naupaka Zimmerman"
+author: "Wilbur Wildcat"
 date: "October 2, 2015"
 output: word_document
 ---
@@ -9,22 +9,73 @@ output: word_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+## Analysis of gapminder dataset using Rmarkdown and knitr
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+We would like to create a report to analyse the gapminder dataset using R. We would also like to produce a final report of these anlyses using Rmarkdown, so that we can generate a Word document containing the output of the final analyses.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+```{r import-data-define-functions, echo=FALSE}
 
-```{r cars}
-summary(cars)
+library("knitr")
+
+gap.in <- read.table("output/combined_gapMinder.tsv", sep = "\t", header = TRUE)
+
+plot.gdp.by.year <- function(country.in) {
+    gap.scatter.subset <- subset(gap.in, country == country.in)
+    plot(x = gap.scatter.subset$year, 
+        y = gap.scatter.subset$gdpPercap,
+        xlab = "Year",
+        ylab = "GDP per capita",
+        main  = paste0(country.in, "'s GDP over time"))
+}
 ```
 
-## Including Plots
+First we're interested in China's GDP over time. We see that it is **increasing strongly** in recent years.
 
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r plot-China, fig.height=3.5, echo=FALSE}
+plot.gdp.by.year("China")
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+Second, we're interested in Algeria's GDP over time. We see that it **increased** in the 1970s, but **decreased** in the 1990s.
+
+```{r plot-Algeria, fig.height=3.5, echo=FALSE}
+plot.gdp.by.year("Algeria")
+```
+
+Lastly, we're interested in France's GDP over time. We see that it has been more or less **increasing linearly** over time.
+
+```{r plot-France, fig.height=3.5, echo=FALSE}
+plot.gdp.by.year("France")
+```
+
+## Continental Summary
+
+We see that, overall, life expectancies are lowest in Africa and highest in Oceania.
+
+```{r summarize-continents, echo=FALSE}
+summary.continents <- cbind(aggregate(lifeExp ~ continent, data = gap.in, mean)[1],
+                            aggregate(lifeExp ~ continent, data = gap.in, mean)[2],
+                            aggregate(lifeExp ~ continent, data = gap.in, min)[2],
+                            aggregate(lifeExp ~ continent, data = gap.in, max)[2])
+
+names(summary.continents) <- c("Continent", "Mean Life Expectancy", "Min Life Expectancy", "Max Life Expectancy")
+
+kable(summary.continents)
+```
+
+## Histograms of global life expectancy
+
+We see that life expectancy seems to be bimodal, with one peak near 70 years of age, and another, broader peak near 40 years of age. This is more apparent with narrower bin widths, since they illustrate the distribution a bit more precisely.
+
+```{r global-histograms-default, echo=FALSE}
+hist(gap.in$lifeExp,
+     main = "Histogram of global life expectancy",
+     xlab = "Life expectancy in years")
+```
+
+
+```{r global-histograms-narrower, echo=FALSE}
+hist(gap.in$lifeExp,
+     main = "Histogram of global life expectancy, narrower bins",
+     xlab = "Life expectancy in years",
+     breaks = 60)
+```
