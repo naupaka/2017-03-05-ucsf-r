@@ -1,3 +1,9 @@
+---
+layout: page
+title: UA Software Carpetry Workshop, Oct 3-4, 2012
+subtitle: Final Exercise
+---
+
 ## Final exercise
 
 ### Using an Rmd file, create a short analysis report using R of the gapminder dataset.
