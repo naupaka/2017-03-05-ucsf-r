@@ -1,3 +1,9 @@
+# Repository for Software Carpentry Workshop to be held on March 5th
+and 6th at UC San Francisco
+
+[Link to rendered website.](https://naupaka.github.io/2017-03-05-ucsf-r/)
+
+<!--
 # workshop-template
 
 This repository is [Software Carpentry][swc-site] and [Data Carpentry][dc-site]'s
@@ -263,3 +269,4 @@ or [mail us][contact].
 [rubygems]: https://rubygems.org/pages/download/
 [self-organized-workshop-form]: https://amy.software-carpentry.org/workshops/submit/
 [swc-site]: http://software-carpentry.org
+-->
