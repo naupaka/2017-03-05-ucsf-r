@@ -1,5 +1,4 @@
-# Repository for Software Carpentry Workshop to be held on March 5th
-and 6th at UC San Francisco
+# Repository for Software Carpentry Workshop to be held on March 5th and 6th at UC San Francisco
 
 [Link to rendered website.](https://naupaka.github.io/2017-03-05-ucsf-r/)
 
