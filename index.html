@@ -96,13 +96,13 @@ eventbrite:           # optional: alphanumeric key for Eventbrite registration, 
   address.
 -->
 {% if page.latlng %}
-<p id="where">
+<p id="where"><h4>
   <strong>Where:</strong>
   {{page.address}}.
   Get directions with
   <a href="//www.openstreetmap.org/?mlat={{page.latlng | replace:',','&mlon='}}&zoom=16">OpenStreetMap</a>
   or
-  <a href="//maps.google.com/maps?q={{page.latlng}}">Google Maps</a>.
+  <a href="//maps.google.com/maps?q={{page.latlng}}">Google Maps</a>.</h4>
 </p>
 {% endif %}
 
@@ -590,11 +590,13 @@ eventbrite:           # optional: alphanumeric key for Eventbrite registration, 
   </div>
 </div> <!-- End of 'editor' section. -->
 
+<!--
+
 <div id="python"> <!-- Start of 'Python' section. Remove the third paragraph if
            the workshop will teach Python using something other than
            the IPython notebook.
-           Details at http://ipython.org/ipython-doc/2/install/install.html#browser-compatibility -->
-<!--
+           Details at http://ipython.org/ipython-doc/2/install/install.html#browser-compatibility
+
   <h3>Python</h3>
 
   <p>
@@ -681,8 +683,8 @@ eventbrite:           # optional: alphanumeric key for Eventbrite registration, 
   please go to <a href="setup/index.html">this page</a>,
   which has instructions on how to test that everything was installed correctly.
   </p>
--->
-</div> <!-- End of 'Python' section. -->
+
+</div> --><!-- End of 'Python' section. -->
 
 <div id="r"> <!-- Start of 'R' section. -->
   <h3>R</h3>
@@ -735,9 +737,9 @@ eventbrite:           # optional: alphanumeric key for Eventbrite registration, 
   </div>
 </div> <!-- End of 'R' section. -->
 
-<div id="sql"> <!-- Start of 'SQLite' section. -->
+<!--
+<div id="sql"> <!-- Start of 'SQLite' section.
 
-  <!--
   <h3>SQLite</h3>
 
   <p>
