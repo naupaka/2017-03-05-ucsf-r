@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Git for Science</title>
+    <meta name="description" content="A short introduction to git">
+        <meta name="author" content="Karthik Ram">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="stylesheet" href="css/slides/reveal.min.css" />
+    <link rel="stylesheet" href="css/slides/oscar.css" id="theme" />
+    <link rel="stylesheet" href="css/slides/ted.css" />
+    <link rel="stylesheet" href="css/slides/github.css">
+    <!-- <link rel="stylesheet" href="css/print/pdf.css"> -->
+
+<!-- Licensed as CC-BY, please edit and use as you see fit. -->
+
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+      <section id="slide-title" data-state="bluesky">
+  <h1>Git for scientists</h1>
+  <p>
+    <div class="attribution">
+    <br />Slides originally by Karthik Ram (@_inundata)<br />
+    Modified by Naupaka Zimmerman (@naupakaz)<br />
+    Bernhard Konrad (@BernhardKonrad), Julia Gustavsen (@JuliaGustavsen), SWC (@swcarpentry)
+    </div>
+  </p>
+</section>
+
+<!-- .......................................... -->
+<section id="howmany" data-markdown>
+    <script type="text/template">
+        ![](img/collaboration.jpg)
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="howmany" data-markdown>
+    <script type="text/template">
+        ![](img/world1.png)
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="howmany" data-markdown>
+    <script type="text/template">
+        ![](img/world2.png)
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="howmany" data-markdown>
+    <script type="text/template">
+        ![](img/world3.png)
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="howmany" data-markdown>
+    <script type="text/template">
+        ![](img/world4.png)
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="howmany" data-markdown>
+    <script type="text/template">
+        ![](img/world5.png)
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="howmany" data-markdown>
+    <script type="text/template">
+        ![](img/world6.png)
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="howmany" data-markdown>
+    <script type="text/template">
+        ![](img/world7.png)
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="howmany" data-markdown>
+    <script type="text/template">
+        ![](img/world8.png)
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="howmany" data-markdown>
+    <script type="text/template">
+        ## Have you heard of a Version Control System?
+    </script>
+</section>
+
+<!-- ......Let's jump into git, hooray! .......... -->
+
+<!-- .......................................... -->
+<section id="plan" data-markdown>
+    <script type="text/template">
+        ![](img/vcs_for_science.png)
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="howmany" data-markdown>
+    <script type="text/template">
+        ![](http://www.math.ubc.ca/~konradbe/swc-git/1.png)
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="howmany" data-markdown>
+    <script type="text/template">
+        ![](http://www.math.ubc.ca/~konradbe/swc-git/2.png)
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="howmany" data-markdown>
+    <script type="text/template">
+        ![](http://www.math.ubc.ca/~konradbe/swc-git/3.png)
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="howmany" data-markdown>
+    <script type="text/template">
+        ![](http://www.math.ubc.ca/~konradbe/swc-git/4.png)
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="howmany" data-markdown>
+    <script type="text/template">
+<img src="http://www.fastcompany.com/multisite_files/fastcompany/imagecache/large/fc_files/mcp2010/888-ben-huh-slide-2.jpg" width="60%">    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="howmany" data-markdown>
+    <script type="text/template">
+        ![](http://www.math.ubc.ca/~konradbe/swc-git/meanwhileInVC.png)
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="howmany" data-markdown>
+    <script type="text/template">
+        ![](http://www.math.ubc.ca/~konradbe/swc-git/better1.png)
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="howmany" data-markdown>
+    <script type="text/template">
+        ![](http://www.math.ubc.ca/~konradbe/swc-git/better2.png)
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="howmany" data-markdown>
+    <script type="text/template">
+        ![](http://www.math.ubc.ca/~konradbe/swc-git/better3.png)
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="howmany" data-markdown>
+    <script type="text/template">
+        ![](http://www.math.ubc.ca/~konradbe/swc-git/better4.png)
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="howmany" data-markdown>
+    <script type="text/template">
+        ![](http://www.math.ubc.ca/~konradbe/swc-git/better5.png)
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="howmany" data-markdown>
+    <script type="text/template">
+        ![](http://www.math.ubc.ca/~konradbe/swc-git/better1.png)
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="Transparency" data-markdown data-state="bluesky">
+    <script type="text/template">
+        ## Uses of version control
+          * Amazing backup
+          * Transparency
+          * Reproducibility
+          * Faster recovery
+          * Collaboration
+          * no overwrites
+          * blame is evident
+          * nothing is ever lost
+          * freedom to experiment
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="benefits_for_you" data-markdown data-state="bluesky">
+    <script type="text/template">
+        ## Uses of version control
+          * Writing papers
+          * Manage (csv) spreadsheet data
+          * Writing lectures
+          * Writing syllabi
+          * **maintain your scripts** 
+              * *R, Python, MATLAB, whatever else*
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="not_dropobox" data-markdown data-state="bluesky">
+    <script type="text/template">
+        This is much more robust than a system like *Dropbox* <br />
+        You decide when to version and what to version
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="snapshots" data-markdown>
+
+    <script type="text/template">
+    ### Version control captures snapshots of your work through time
+    </script>
+</section>
+
+
+<!-- .......................................... -->
+<section id="how_it_works" data-markdown data-state="bluesky">
+    <script type="text/template">
+        ##  Git is an open source, distributed, version control system.
+
+<img src="https://github-camo.global.ssl.fastly.net/233e6dc4e0b7db13dea0ee1164c9eaac875269db/687474703a2f2f636c2e6c792f31493233336a316c3258336333313143314331482f4769742d4c6f676f2d32436f6c6f722e706e67" width="30%"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="http://git-scm.com/images/branching-illustration@2x.png" width="30%">    </script>
+</section>
+
+
+<!-- .......................................... -->
+<section id="lets_start" data-markdown data-state="bluesky">
+    <script type="text/template">
+        ## It's easy to start using Git!
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="shell_git" data-markdown>
+    <script type="text/template">
+        ## *Super-quick overview*
+        ## Type in git from the terminal
+<br>
+```
+git
+```
+</script>
+</section>
+
+<!-- .......................................... -->
+
+<section id="basic_workflow" data-markdown>
+    <script type="text/template">
+      ## There are 4 main steps to a basic Git workflow
+
+1. **Edit files** 
+    * *grab a tub of ice cream off the shelf*
+    </script>
+</section>
+
+<!-- .......................................... -->
+
+<section id="basic_workflow" data-markdown>
+    <script type="text/template">
+      ## There are 4 main steps to a basic Git workflow
+
+1. **Edit files** 
+    * *grab a tub of ice cream off the shelf*
+2. **Review these changes**
+    * *Do you really want ice cream?*
+    </script>
+</section>
+
+<!-- .......................................... -->
+
+<section id="basic_workflow" data-markdown>
+    <script type="text/template">
+      ## There are 4 main steps to a basic Git workflow
+
+1. **Edit files** 
+    * *grab a tub of ice cream off the shelf*
+2. **Review these changes**
+    * *Do you really want ice cream?*
+3. **Stage the changes** 
+    * *put it in your cart*
+    </script>
+</section>
+
+<!-- .......................................... -->
+
+<section id="basic_workflow" data-markdown>
+    <script type="text/template">
+      ## There are 4 main steps to a basic Git workflow
+
+1. **Edit files** 
+    * *grab a tub of ice cream off the shelf*
+2. **Review these changes**
+    * *Do you really want ice cream?*
+3. **Stage the changes** 
+    * *put it in your cart*
+4. **Commit these changes** 
+    * *pay for it*
+    </script>
+</section>
+
+<!-- .......................................... -->
+
+<section id="workflow_fleshed_out" data-markdown>
+<script type="text/template">
+  ## There are 4 main steps to a basic Git workflow
+
+ 1. **Edit files**
+    * *create a file*
+    </script>
+</section>
+
+
+<!-- .......................................... -->
+
+<section id="workflow_fleshed_out" data-markdown>
+<script type="text/template">
+  ## There are 4 main steps to a basic Git workflow
+
+ 1. **Edit files**
+    * *create a file*
+ 2. **Review these changes**
+    * <code>git diff</code>
+    </script>
+</section>
+
+
+<!-- .......................................... -->
+
+<section id="workflow_fleshed_out" data-markdown>
+<script type="text/template">
+  ## There are 4 main steps to a basic Git workflow
+
+ 1. **Edit files**
+    * *create a file*
+ 2. **Review these changes**
+    * <code>git diff</code>
+ 3. **Stage the changes**
+    * <code>git add</code>
+    </script>
+</section>
+
+
+<!-- .......................................... -->
+
+<section id="workflow_fleshed_out" data-markdown>
+<script type="text/template">
+  ## There are 4 main steps to a basic Git workflow
+
+ 1. **Edit files**
+    * *create a file*
+ 2. **Review these changes**
+    * <code>git diff</code>
+ 3. **Stage the changes** 
+    * <code>git add</code>
+ 4. **Commit these changes** 
+    * <code>git commit</code>
+    </script>
+</section>
+
+
+<!-- .......................................... -->
+<section id="even-simpler-workflow-ice-cream">
+     <h2>An even simpler workflow</h2>
+<ol>
+ <li><strong>Edit files</strong></li>
+  <ul><li><em>Grab tub of ice cream</em></li></ul>
+</ol>
+</section>
+
+<!-- .......................................... -->
+
+<section id="even-simpler-workflow-ice-cream">
+     <h2>An even simpler workflow</h2>
+<ol>
+ <li><strong>Edit files</strong></li>
+  <ul><li>Grab tub of ice cream</li></ul>
+ <li><strong>Stage the changes and commit</strong></li>
+  <ul><li><em>run to cashier and pay for it</em></li></ul>
+</ol>
+</section>
+
+<!-- .......................................... -->
+
+<section id="even-simpler-workflow" data-markdown>
+    <script type="text/template">
+      ## An even simpler workflow
+      1. **Edit files** 
+          * *Use your favorite editor*
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="even-simpler-workflow" data-markdown>
+    <script type="text/template">
+      ## An even simpler workflow
+      1. **Edit files** 
+          * *Use your favorite editor*
+      2. **Stage the changes and commit** 
+          * `git commit -am`
+    </script>
+</section>
+
+<!-- .......................................... -->
+
+<section id="remote-hosts" data-markdown  data-state="bluesky">
+    <script type="text/template">
+        # Using a Git hosting service
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="hosting_options" data-markdown>
+<script type="text/template">
+### Where to host your code
+
+* **Bitbucket.com**: unlimited free private hosting for students
+* **GitHub.com**: offers 5 free private repositories for students
+* Both offer unlimited public repositories
+</script>
+</section>
+
+<!-- .......................................... -->
+<section id="clone_this_repo" data-markdown>
+    <script type="text/template">
+    ### Clone the code to make the slides you are currently viewing!
+```
+git clone git@github.com:naupaka/git_intro.git
+```
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="push_and_pull" data-markdown>
+    <script type="text/template">
+        # Syncing with a remote repository
+```
+git push
+```
+
+```
+git pull
+```
+    </script>
+</section>
+
+<!-- .......................................... -->
+<section id="resources" data-markdown>
+    <script type="text/template">
+        ## Additional resources
+1. git-scm.com
+2. gitref.org
+3. progit.com
+    </script>
+</section>
+
+<!-- .......................................... -->
+<!-- Prius Dashboard image source: http://www.flickr.com/photos/shinerclay/5020338937/ -->
+<!-- This is how you are using Git now, which is fine. -->
+<section id="prius" data-markdown  data-state="bluesky">
+    <script type="text/template">
+        ![](img/prius.jpg)
+    </script>
+</section>
+
+<!-- .......................................... -->
+<!-- Endeavor image source: http://www.flickr.com/photos/jurvetson/6912974136/ -->
+<!-- But really, this is the true power of Git. You can expose every wire and button under the hood if you wanted to. -->
+<section id="shuttle" data-markdown  data-state="bluesky">
+    <script type="text/template">
+        ![](img/endavour.jpg)
+    </script>
+</section>
+
+
+
+<section id="things-i-didnt-cover" data-state="bluesky">
+<h3>Other things you can do</h3>
+<ul>
+<li>Collaborate with your coauthors</li>
+<li>Use various free/paid tools including GUIs</li>
+<li>Manage everything with git</li>
+</ul>
+</section>
+
+
+<section id="vcs_all_the_things" data-markdown data-state="bluesky">
+    <script type="text/template">
+![](img/kid_like_a_boss.jpg)
+    </script>
+</section>
+<!-- ~~~~~~~~~~~~~ end divs  ~~~~~~~~~~~~~~~~~~ -->
+
+      </div>
+    </div>
+
+<script src="js/slides/head.min.js"></script>
+<script src="js/slides/reveal.min.js"></script>
+
+<!-- Load JS here for greater good =============================-->
+    <script src="js/jquery-1.8.2.min.js"></script>
+    <script src="js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script src="js/jquery.dropkick-1.0.0.js"></script>
+    <script src="js/custom_checkbox_and_radio.js"></script>
+    <script src="js/custom_radio.js"></script>
+    <script src="js/jquery.tagsinput.js"></script>
+    // <script src="js/bootstrap-tooltip.js"></script>
+    // <script src="js/jquery.placeholder.js"></script>
+    // <script src="http://vjs.zencdn.net/c/video.js"></script>
+    <script src="js/application.js"></script>
+<script>
+            Reveal.initialize({
+                controls: false,
+                progress: false,
+                history: true,
+                center: true,
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/none
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+        { src: 'js/slides/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'js/slides/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'js/slides/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'js/slides/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+
+                ]
+            });
+</script>
+
+  </body>
+</html>
