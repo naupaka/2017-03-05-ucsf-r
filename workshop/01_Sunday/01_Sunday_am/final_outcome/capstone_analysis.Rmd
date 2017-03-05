@@ -1,7 +1,7 @@
 ---
-title: "iPlant Software Carpentry Capstone Exercise"
-author: "Wilbur Wildcat"
-date: "October 2, 2015"
+title: "UCSF Software Carpentry Capstone Exercise"
+author: "Naupaka Zimmerman"
+date: "March 5, 2017"
 output: word_document
 ---
 
@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 We would like to create a report to analyse the gapminder dataset using R. We would also like to produce a final report of these anlyses using Rmarkdown, so that we can generate a Word document containing the output of the final analyses.
 
-```{r import-data-define-functions, echo=FALSE}
+```{r import-data-define-functions, echo=FALSE, message=FALSE}
 
 # Install the knitr package if needed
 if (!require("knitr")) {
