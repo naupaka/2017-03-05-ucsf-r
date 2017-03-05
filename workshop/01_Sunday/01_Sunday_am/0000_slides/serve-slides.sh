@@ -1,1 +1,1 @@
-ipython2 nbconvert intro-slides.ipynb --to slides --post serve
+jupyter nbconvert intro-slides.ipynb --to slides --post serve
