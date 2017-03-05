@@ -1,0 +1,95 @@
+---
+title: "iPlant Software Carpentry Capstone Exercise"
+author: "Wilbur Wildcat"
+date: "October 2, 2015"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Analysis of gapminder dataset using Rmarkdown and knitr
+
+We would like to create a report to analyse the gapminder dataset using R. We would also like to produce a final report of these anlyses using Rmarkdown, so that we can generate a Word document containing the output of the final analyses.
+
+```{r import-data-define-functions, echo=FALSE}
+
+# Install the knitr package if needed
+if (!require("knitr")) {
+    install.packages("knitr")
+}
+
+# Read in the data, assuming a header row and tab seperated columns
+gap.in <- read.table("output/combined_gapMinder.tsv", sep = "\t", header = TRUE)
+
+# define a function to plot a scatterplot of GDP per capita by year, given a country name as input
+plot.gdp.by.year <- function(country.in) {
+    gap.scatter.subset <- subset(gap.in, country == country.in)
+    plot(x = gap.scatter.subset$year, 
+        y = gap.scatter.subset$gdpPercap,
+        xlab = "Year",
+        ylab = "GDP per capita",
+        main  = paste0(country.in, "'s GDP over time"))
+}
+```
+
+First we're interested in China's GDP over time. We see that it is **increasing strongly** in recent years.
+
+```{r plot-China, fig.height=3.5, echo=FALSE}
+# Plot for China
+plot.gdp.by.year("China")
+```
+
+Second, we're interested in Algeria's GDP over time. We see that it **increased** in the 1970s, but **decreased** in the 1990s.
+
+```{r plot-Algeria, fig.height=3.5, echo=FALSE}
+# Plot for Algeria
+plot.gdp.by.year("Algeria")
+```
+
+Lastly, we're interested in France's GDP over time. We see that it has been more or less **increasing linearly** over time.
+
+```{r plot-France, fig.height=3.5, echo=FALSE}
+# Plot for France
+plot.gdp.by.year("France")
+```
+
+## Continental Summary
+
+We see that, overall, life expectancies are lowest in Africa and highest in Oceania.
+
+```{r summarize-continents, echo=FALSE}
+# Assemble a data frame of summary data of life expectancy from the gapminder dataset 
+summary.continents <- cbind(aggregate(lifeExp ~ continent, data = gap.in, mean)[1],
+                            aggregate(lifeExp ~ continent, data = gap.in, mean)[2],
+                            aggregate(lifeExp ~ continent, data = gap.in, min)[2],
+                            aggregate(lifeExp ~ continent, data = gap.in, max)[2])
+
+# Give the columns useful and readable names
+names(summary.continents) <- c("Continent", "Mean Life Expectancy", "Min Life Expectancy", "Max Life Expectancy")
+
+# Output a markdown table for rendering in Word
+kable(summary.continents)
+```
+
+## Histograms of global life expectancy
+
+We see that life expectancy seems to be bimodal, with one peak near 70 years of age, and another, broader peak near 40 years of age. This is more apparent with narrower bin widths, since they illustrate the distribution a bit more precisely.
+
+```{r global-histograms-default, echo=FALSE}
+# Histogram with default bin widths
+hist(gap.in$lifeExp,
+     main = "Histogram of global life expectancy",
+     xlab = "Life expectancy in years")
+```
+
+
+```{r global-histograms-narrower, echo=FALSE}
+# Histogram with more narrow bin widths, any narrower thn this and you go 
+# below the reoslution of the data
+hist(gap.in$lifeExp,
+     main = "Histogram of global life expectancy, narrower bins",
+     xlab = "Life expectancy in years",
+     breaks = 60)
+```
