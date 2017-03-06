@@ -14,7 +14,7 @@ subtitle: Final Exercise
 4. Commit your changes using git.  You can do this from the command line or in RStudio if you like.
 5. Calculate the mean, min, and max life expectancies for each continent (hint: you use `aggregate()` if you like). Describe what you see in the results using a markdown text.
 6. Commit your changes using `git` and push them to github.
-7. Make a 2 histograms of global life expectancy using `hist()`.  One with the default bin widths and one with narrower bin widths. Explain the differences and any interesting trends in markdown text.
+7. Make a 2 histograms of global life expectancy for a single year using `hist()`.  One with the default bin widths and one with narrower bin widths. Explain the differences and any interesting trends in markdown text.
 8. Commit your changes and push them to github.
 9. Compile the final Rmd file to html, make sure it looks ok, and then commit this html file as well (should be in your working directory) and push everything to github.
 
