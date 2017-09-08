@@ -23,7 +23,7 @@ template for creating websites for workshops.
     We can only do that if you [customize][customization] that page correctly
     *and* [fill in the form][self-organized-workshop-form].
 
-If you run into problems, 
+If you run into problems,
 or have ideas about how to make this process simpler,
 please [get in touch](#getting-and-giving-help).
 The pages on [customizing your website][customization],
